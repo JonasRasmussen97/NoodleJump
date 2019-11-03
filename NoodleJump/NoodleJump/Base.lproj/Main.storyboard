@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7w0-V2-7zC">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="BV1-FR-VrT" customClass="GameViewController" customModule="NoodleJump" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEs-Hd-TyD">
+                                <rect key="frame" x="360" y="39" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="Fsh-XI-VhO" kind="unwind" unwindAction="modalDismissedWithSegue:" id="N7J-iY-elj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="CEs-Hd-TyD" secondAttribute="trailing" constant="20" id="5kd-PM-4YW"/>
+                            <constraint firstItem="CEs-Hd-TyD" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="360" id="eeS-Gf-xKl"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="top" secondItem="CEs-Hd-TyD" secondAttribute="top" constant="5" id="jWl-D1-77H"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="22n-7x-Exd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <exit id="Fsh-XI-VhO" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1179.7101449275362" y="34.821428571428569"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="sHL-XJ-lYK">
+            <objects>
+                <viewController definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" id="7w0-V2-7zC" customClass="HomeViewController" customModule="NoodleJump" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qoz-3f-8pl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBT-sO-Zya">
+                                <rect key="frame" x="80" y="410" width="252" height="148"/>
+                                <state key="normal" image="PlayGame.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="presentation" id="u5w-f9-N2j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Prk-NO-1dm">
+                                <rect key="frame" x="80" y="566" width="252" height="148"/>
+                                <state key="normal" image="Highscore.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Noodle Jump" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4d-9K-4Sj">
+                                <rect key="frame" x="98" y="88" width="216" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dpn-Pj-23X" firstAttribute="trailing" secondItem="Prk-NO-1dm" secondAttribute="trailing" constant="82" id="6dc-6K-8El"/>
+                            <constraint firstItem="Prk-NO-1dm" firstAttribute="leading" secondItem="dpn-Pj-23X" secondAttribute="leading" constant="80" id="CFN-sa-QNm"/>
+                            <constraint firstItem="Prk-NO-1dm" firstAttribute="top" secondItem="EBT-sO-Zya" secondAttribute="bottom" constant="8" id="F4u-hQ-uc1"/>
+                            <constraint firstItem="EBT-sO-Zya" firstAttribute="leading" secondItem="dpn-Pj-23X" secondAttribute="leading" constant="80" id="IC9-9Q-uJ8"/>
+                            <constraint firstItem="EBT-sO-Zya" firstAttribute="top" secondItem="dpn-Pj-23X" secondAttribute="top" constant="366" id="KbT-gi-kny"/>
+                            <constraint firstItem="F4d-9K-4Sj" firstAttribute="centerX" secondItem="EBT-sO-Zya" secondAttribute="centerX" id="Rde-C4-pbW"/>
+                            <constraint firstItem="F4d-9K-4Sj" firstAttribute="top" secondItem="dpn-Pj-23X" secondAttribute="top" constant="44" id="ehy-Fk-Rel"/>
+                            <constraint firstItem="dpn-Pj-23X" firstAttribute="trailing" secondItem="EBT-sO-Zya" secondAttribute="trailing" constant="82" id="q4L-ic-x5w"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dpn-Pj-23X"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zXs-no-AWR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LKL-Qr-Kro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="247.82608695652175" y="25.446428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Highscore.png" width="252" height="74"/>
+        <image name="PlayGame.png" width="252" height="74"/>
+    </resources>
+</document>
