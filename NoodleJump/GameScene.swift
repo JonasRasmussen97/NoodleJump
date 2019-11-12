@@ -30,7 +30,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Initializes the player with name.
     var playerObj = Player(playerName: "Jonas")
     
-    var level1 = Level(numberOfFields_: 500)
+    var level1 = Level(numberOfFields_: 30)
     
    
     
@@ -60,7 +60,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         playerObj.checkVelocity()
         playerObj.movePlayerWithSensor()
         startScoreSystem()
-        
+        let minY = playerObj.sprite.position.y - frame.size.height/2
+        checkFieldLoadHeight(minY: minY)
+
         checkBoundaries()
         
       }
@@ -125,21 +127,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     }
                 }
             }
+            
         }
-        
-        
-        
-            
-            
-        
-        
         
            self.addChild((playerObj.playerScoreLabel))
                       self.addChild(playerObj.sprite)
                       self.physicsWorld.contactDelegate = self
                       self.camera = cam
 
-        
+    }
+    
+    
+    
+    
+    //check if fields are below screen and remove if they are
+    func checkFieldLoadHeight(minY: CGFloat){
+        for i in 0...level1.fields.count-1{
+            if(level1.fields[i].position.y < minY){
+                level1.fields[i].removeFromParent()
+            }
+        }
     }
     
    
