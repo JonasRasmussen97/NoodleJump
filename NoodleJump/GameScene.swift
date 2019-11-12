@@ -20,6 +20,7 @@ static let Buff: UInt32 = 8
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    static var instance: GameScene!
     // Defines the SKAction when the player moves. It is set further down in the code.
     var action: SKAction = SKAction.moveTo(x: 0, duration: 1)
     
@@ -32,7 +33,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var level1 = Level(numberOfFields_: 500)
     
-   
     
     // Used to make a cam that follows the player.
     let cam = SKCameraNode()
@@ -41,13 +41,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var second: CGFloat = 0.0
         
     
+    
     // Everything that should be set upon switching scene.
     override func didMove(to view: SKView) {
         maxWidth = frame.size.width;
         playerObj.sprite.position = CGPoint(x: 0, y: 150)
-       
-        generateLevel()
         
+        generateLevel()
+        GameScene.instance = self
         
     }
     
@@ -70,7 +71,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if(playerObj.sprite.position.x >= frame.size.width / 2) {
             playerObj.sprite.removeAllActions()
             playerObj.sprite.position = CGPoint(x: 0, y: playerObj.sprite.position.y)
-            print("HEY!")
+          //  print("HEY!")
         } else if(playerObj.sprite.position.x <= -frame.size.width/2) {
             playerObj.sprite.removeAllActions()
             playerObj.sprite.position = CGPoint(x: 0, y: playerObj.sprite.position.y)
@@ -85,6 +86,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         playerObj.playerScoreLabel.position.x = playerObj.sprite.position.x
         playerObj.playerScoreLabel.position.y = playerObj.sprite.position.y + 100
         playerObj.playerScoreLabel.text = "Height(Score): " + playerObj.sprite.position.y.description
+        playerObj.score = playerObj.sprite.position.y
+        playerObj.defaults.set(playerObj.score, forKey: "saveScoreLocal")
+        print(playerObj.score)
     }
     
     // This function generates the level. This is where all the logic for the fields is located.

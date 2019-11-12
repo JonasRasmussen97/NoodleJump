@@ -11,6 +11,7 @@ import CoreMotion
 
 class Player {
     
+    let defaults = UserDefaults.standard
     var score:CGFloat = 0.0
     var playerScoreLabel = SKLabelNode()
     var sprite = SKSpriteNode()
@@ -42,8 +43,10 @@ class Player {
         
         animatePlayer()
       
-        print(playerAnimatedAtlas.textureNames.count)
+       // print(playerAnimatedAtlas.textureNames.count)
+        print(defaults.string(forKey: "saveScoreLocal"))
     }
+
     
     func animatePlayer() {
        for i in 1...playerAnimatedAtlas.textureNames.count {
