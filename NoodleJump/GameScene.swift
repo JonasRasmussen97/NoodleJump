@@ -151,6 +151,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             contact.bodyA.node?.removeFromParent()
         } else if(collision == ColliderType.Player | ColliderType.Field) {
            playerObj.sprite.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 100))
+              playerObj.sprite.run(SKAction.repeat(SKAction.animate(with: playerObj.playerJumpingFrames, timePerFrame: 0.1, resize: false, restore: true), count: 1))
           //  print("Collision!")
         } else if(collision == ColliderType.Field | ColliderType.Field) {
             print("Table collide with table!!")
