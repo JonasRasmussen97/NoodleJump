@@ -30,7 +30,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Initializes the player with name.
     var playerObj = Player(playerName: "Jonas")
     
-    var level1 = Level(numberOfFields_: 50)
+    var level1 = Level(numberOfFields_: 500)
     
    
     
@@ -113,8 +113,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
                 level1.fields[i].position = CGPoint(x: randomX, y: randomY)
                 self.addChild(level1.fields[i])
+                
+                //checks whether the fields are colliding
+                for j in 0...level1.fields.count - 1{
+                    if(j > 0){
+                        if(j != i){
+                            if(level1.fields[i].intersects(level1.fields[j])){
+                                level1.fields[j].removeFromParent()
+                            }
+                        }
+                    }
+                }
             }
-            }
+        }
+        
+        
+        
             
             
         
@@ -139,11 +153,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
            playerObj.sprite.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 100))
           //  print("Collision!")
         } else if(collision == ColliderType.Field | ColliderType.Field) {
-        print("Table collide with table!!")
-            
+            print("Table collide with table!!")
         }
         
-       
+        
       }
       
 }

@@ -19,7 +19,7 @@ class Field {
     init(spriteName: String) {
         sprite = SKSpriteNode(imageNamed: spriteName)
         sprite.name = "Field"
-        sprite.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: sprite.size.width, height:1))
+        sprite.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: sprite.size.width, height:sprite.size.height))
         sprite.physicsBody?.affectedByGravity = false
         sprite.physicsBody?.isDynamic = false
         sprite.physicsBody?.categoryBitMask = ColliderType.Field
