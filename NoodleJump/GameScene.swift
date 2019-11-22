@@ -87,8 +87,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func startScoreSystem() {
         playerObj.playerScoreLabel.position.x = playerObj.sprite.position.x
         playerObj.playerScoreLabel.position.y = playerObj.sprite.position.y + 100
-        playerObj.playerScoreLabel.text = "Height(Score): " + playerObj.sprite.position.y.description
-        playerObj.score = playerObj.sprite.position.y
+        playerObj.playerScoreLabel.text = "Height(Score): " + playerObj.score.description
+        if(playerObj.sprite.position.y > playerObj.score){
+                playerObj.score = playerObj.sprite.position.y
+        }
         playerObj.defaults.set(playerObj.score, forKey: "saveScoreLocal")
         //print(playerObj.score)
     }
