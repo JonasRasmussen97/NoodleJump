@@ -78,20 +78,15 @@ class Player {
     // This is to prevent collision on tables from below.
     func checkVelocity() {
           if(sprite.physicsBody?.velocity.dy ?? 0 < check) {
-                 // print("It is below 0 now!")
-                  sprite.physicsBody?.categoryBitMask = ColliderType.Player
-                  sprite.physicsBody?.collisionBitMask = ColliderType.Field | ColliderType.Buff
-                  sprite.physicsBody?.contactTestBitMask = ColliderType.Field | ColliderType.Buff
-              } else {
-                  sprite.physicsBody?.categoryBitMask = 0
-                  sprite.physicsBody?.collisionBitMask = 0
+             // print("It is below 0 now!")
+              sprite.physicsBody?.categoryBitMask = ColliderType.Player
+              sprite.physicsBody?.collisionBitMask = ColliderType.Field | ColliderType.Buff
+              sprite.physicsBody?.contactTestBitMask = ColliderType.Field | ColliderType.Buff
+          } else {
+              sprite.physicsBody?.categoryBitMask = 0
+              sprite.physicsBody?.collisionBitMask = 0
               sprite.physicsBody?.contactTestBitMask = 0
-                  
-                //  print("It is not below 0")
-              }
-        
-        
-
-}
+          }
+    }
 }
 

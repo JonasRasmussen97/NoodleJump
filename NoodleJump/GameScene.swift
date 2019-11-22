@@ -31,7 +31,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Initializes the player with name.
     var playerObj = Player(playerName: "Jonas")
     
-    var level1 = Level(numberOfFields_: 30)
+    var level1 = Level(numberOfFields_: 100)
     
     
     // Used to make a cam that follows the player.
@@ -72,11 +72,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func checkBoundaries () {
         if(playerObj.sprite.position.x >= frame.size.width / 2) {
             playerObj.sprite.removeAllActions()
-            playerObj.sprite.position = CGPoint(x: 0, y: playerObj.sprite.position.y)
+            playerObj.sprite.position = CGPoint(x: (-maxWidth/2)+5, y: playerObj.sprite.position.y)
           //  print("HEY!")
         } else if(playerObj.sprite.position.x <= -frame.size.width/2) {
             playerObj.sprite.removeAllActions()
-            playerObj.sprite.position = CGPoint(x: 0, y: playerObj.sprite.position.y)
+            playerObj.sprite.position = CGPoint(x: (maxWidth/2)-5, y: playerObj.sprite.position.y)
         } else {
             playerObj.sprite.run(action)
         }
@@ -90,34 +90,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         playerObj.playerScoreLabel.text = "Height(Score): " + playerObj.sprite.position.y.description
         playerObj.score = playerObj.sprite.position.y
         playerObj.defaults.set(playerObj.score, forKey: "saveScoreLocal")
-        print(playerObj.score)
+        //print(playerObj.score)
     }
     
     // This function generates the level. This is where all the logic for the fields is located.
     // Such as how many fields, the maximum distance between them and so on.
     func generateLevel() {
         // For loop that creates starting fields. This ensures the player has something to land on when starting. Lower limit = (-maxWidth/2) and upper limit = (maxWidth/2).
-            for startFields in level1.startFields {
-                startFields.position = CGPoint(x: 0 + CGFloat.random(in: (-maxWidth/2)...(maxWidth/2)), y: 0 + CGFloat.random(in: 0...30))
-                
-                let b = Buff(spriteName: "Green Bottle")
-            b.sprite.position.x = CGFloat.random(in: 0...1000)
-            b.sprite.position.y = CGFloat.random(in: 500...6000)
-            self.addChild(b.sprite)
-                
-                self.addChild(startFields)
-            }
+        for startFields in level1.startFields {
+            startFields.position = CGPoint(x: 0 + CGFloat.random(in: (-maxWidth/2)...(maxWidth/2)), y: 0 + CGFloat.random(in: 0...30))
+            
+            let b = Buff(spriteName: "Green Bottle")
+        b.sprite.position.x = CGFloat.random(in: 0...1000)
+        b.sprite.position.y = CGFloat.random(in: 500...6000)
+        self.addChild(b.sprite)
+            
+            self.addChild(startFields)
+        }
             
                 // For loop that creates fields.
         for i in 0...level1.fields.count - 1 {
             if(i > 0) {
                 let previousPosition = level1.fields[i-1].position
-                var randomX = CGFloat.random(in: (-maxWidth/2)...(maxWidth/2))
-                let randomY = CGFloat.random(in: previousPosition.y...previousPosition.y+50)
-                if(randomX - previousPosition.x <= 100) {
-                    randomX += CGFloat.random(in: -100...100)
+                let randomX = CGFloat.random(in: (-maxWidth/2)...(maxWidth/2))
+                var randomY = CGFloat.random(in: previousPosition.y...previousPosition.y+100)
+                if(randomY - previousPosition.y <= 100) {
+                    randomY += CGFloat.random(in: 20...120)
                 }
                 level1.fields[i].position = CGPoint(x: randomX, y: randomY)
+                
                 self.addChild(level1.fields[i])
                 
                 //checks whether the fields are colliding
@@ -134,16 +135,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
-           self.addChild((playerObj.playerScoreLabel))
-                      self.addChild(playerObj.sprite)
-                      self.physicsWorld.contactDelegate = self
-                      self.camera = cam
-
+        self.addChild((playerObj.playerScoreLabel))
+        self.addChild(playerObj.sprite)
+        self.physicsWorld.contactDelegate = self
+        self.camera = cam
     }
-    
-    
-    
-    
+
     //check if fields are below screen and remove if they are
     func checkFieldLoadHeight(minY: CGFloat){
         for i in 0...level1.fields.count-1{
@@ -153,7 +150,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-   
     // What to do upon collision detected.
     func didBegin(_ contact: SKPhysicsContact) {
         let collision:UInt32 = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
@@ -161,16 +157,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // Remove the buff node if the player collides with it.
             contact.bodyA.node?.removeFromParent()
         } else if(collision == ColliderType.Player | ColliderType.Field) {
-           playerObj.sprite.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 100))
-              playerObj.sprite.run(SKAction.repeat(SKAction.animate(with: playerObj.playerJumpingFrames, timePerFrame: 0.1, resize: false, restore: true), count: 1))
+            playerObj.sprite.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 100))
+            playerObj.sprite.run(SKAction.repeat(SKAction.animate(with: playerObj.playerJumpingFrames, timePerFrame: 0.1, resize: false, restore: true), count: 1))
           //  print("Collision!")
-        } else if(collision == ColliderType.Field | ColliderType.Field) {
-            print("Table collide with table!!")
         }
-        
-        
       }
-      
 }
     
     
