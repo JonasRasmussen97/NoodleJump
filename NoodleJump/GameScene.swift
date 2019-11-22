@@ -99,16 +99,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Such as how many fields, the maximum distance between them and so on.
     func generateLevel() {
         // For loop that creates starting fields. This ensures the player has something to land on when starting. Lower limit = (-maxWidth/2) and upper limit = (maxWidth/2).
-        for startFields in level1.startFields {
+        /*for startFields in level1.startFields {
             startFields.position = CGPoint(x: 0 + CGFloat.random(in: (-maxWidth/2)...(maxWidth/2)), y: 0 + CGFloat.random(in: 0...30))
             
             let b = Buff(spriteName: "Green Bottle")
-        b.sprite.position.x = CGFloat.random(in: 0...1000)
-        b.sprite.position.y = CGFloat.random(in: 500...6000)
-        self.addChild(b.sprite)
+            b.sprite.position.x = CGFloat.random(in: 0...1000)
+            b.sprite.position.y = CGFloat.random(in: 500...6000)
+            self.addChild(b.sprite)
             
             self.addChild(startFields)
-        }
+        }*/
             
                 // For loop that creates fields.
         for i in 0...level1.fields.count - 1 {
@@ -133,6 +133,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         }
                     }
                 }
+            }else{
+                level1.fields[i].position.x = 0
+                level1.fields[i].position.y = -10
+                self.addChild(level1.fields[i])
             }
             
         }
