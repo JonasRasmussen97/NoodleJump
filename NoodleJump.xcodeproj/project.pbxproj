@@ -22,6 +22,8 @@
 		0DB9FCFA237349DF0009B75C /* 4-Jump.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9FCF9237349DF0009B75C /* 4-Jump.atlas */; };
 		0DDF3BAD236C730100B3B429 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF3BAC236C730100B3B429 /* Player.swift */; };
 		0DDF3BAF236C731400B3B429 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF3BAE236C731400B3B429 /* Field.swift */; };
+		1680648F2387FDB700F67CB6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1680648E2387FDB700F67CB6 /* TableViewController.swift */; };
+		168064912387FDE600F67CB6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168064902387FDE600F67CB6 /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		0DB9FCF9237349DF0009B75C /* 4-Jump.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "4-Jump.atlas"; sourceTree = "<group>"; };
 		0DDF3BAC236C730100B3B429 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		0DDF3BAE236C731400B3B429 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		1680648E2387FDB700F67CB6 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		168064902387FDE600F67CB6 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = NoodleJump/GameScene.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		0D7D8DD22366327300341F3A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1680648E2387FDB700F67CB6 /* TableViewController.swift */,
 				0D7D8DC223662DA100341F3A /* GameViewController.swift */,
 				0D7D8DDC236641C700341F3A /* HomeViewController.swift */,
 			);
@@ -108,6 +113,7 @@
 		0D7D8DD32366332800341F3A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				168064902387FDE600F67CB6 /* GameScene.swift */,
 				0D7D8DC023662DA100341F3A /* GameScene.swift */,
 			);
 			path = Scenes;
@@ -221,6 +227,8 @@
 				0D7D8DC323662DA100341F3A /* GameViewController.swift in Sources */,
 				0D7D8DDB23663A7800341F3A /* Settings.swift in Sources */,
 				0DDF3BAD236C730100B3B429 /* Player.swift in Sources */,
+				168064912387FDE600F67CB6 /* GameScene.swift in Sources */,
+				1680648F2387FDB700F67CB6 /* TableViewController.swift in Sources */,
 				0DB9FCF6237321BC0009B75C /* Enemy.swift in Sources */,
 				0DDF3BAF236C731400B3B429 /* Field.swift in Sources */,
 				0DB9FCE9236F35EB0009B75C /* Level.swift in Sources */,
@@ -369,8 +377,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M6ZZ9QRNQK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = NoodleJump/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,8 +396,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M6ZZ9QRNQK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = NoodleJump/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
