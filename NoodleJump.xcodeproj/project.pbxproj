@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0D7D8DBB23662DA100341F3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D8DBA23662DA100341F3A /* AppDelegate.swift */; };
-		0D7D8DC123662DA100341F3A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D8DC023662DA100341F3A /* GameScene.swift */; };
 		0D7D8DC323662DA100341F3A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7D8DC223662DA100341F3A /* GameViewController.swift */; };
 		0D7D8DC623662DA100341F3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D7D8DC423662DA100341F3A /* Main.storyboard */; };
 		0D7D8DC823662DA300341F3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D7D8DC723662DA300341F3A /* Assets.xcassets */; };
@@ -24,12 +23,12 @@
 		0DDF3BAF236C731400B3B429 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF3BAE236C731400B3B429 /* Field.swift */; };
 		1680648F2387FDB700F67CB6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1680648E2387FDB700F67CB6 /* TableViewController.swift */; };
 		168064912387FDE600F67CB6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168064902387FDE600F67CB6 /* GameScene.swift */; };
+		1680649323880B7C00F67CB6 /* NoodleMan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1680649223880B7B00F67CB6 /* NoodleMan.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0D7D8DB723662DA100341F3A /* NoodleJump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoodleJump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D7D8DBA23662DA100341F3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
-		0D7D8DC023662DA100341F3A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = ../GameScene.swift; sourceTree = "<group>"; };
 		0D7D8DC223662DA100341F3A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = ../GameViewController.swift; sourceTree = "<group>"; };
 		0D7D8DC523662DA100341F3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D7D8DC723662DA300341F3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		0DDF3BAE236C731400B3B429 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		1680648E2387FDB700F67CB6 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		168064902387FDE600F67CB6 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = NoodleJump/GameScene.swift; sourceTree = SOURCE_ROOT; };
+		1680649223880B7B00F67CB6 /* NoodleMan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoodleMan.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +89,7 @@
 				0DB9FCF3237320A00009B75C /* PlayGame.png */,
 				0DB9FCF12373209F0009B75C /* Player1.png */,
 				0DB9FCF02373209F0009B75C /* Table.png */,
+				1680649223880B7B00F67CB6 /* NoodleMan.jpg */,
 				0D7D8DC923662DA300341F3A /* LaunchScreen.storyboard */,
 				0D7D8DCC23662DA300341F3A /* Info.plist */,
 				0D7D8DD62366345A00341F3A /* Assets */,
@@ -114,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				168064902387FDE600F67CB6 /* GameScene.swift */,
-				0D7D8DC023662DA100341F3A /* GameScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -207,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DB9FCFA237349DF0009B75C /* 4-Jump.atlas in Resources */,
+				1680649323880B7C00F67CB6 /* NoodleMan.jpg in Resources */,
 				0D7D8DC623662DA100341F3A /* Main.storyboard in Resources */,
 				0D7D8DC823662DA300341F3A /* Assets.xcassets in Resources */,
 				0DB9FCF8237322040009B75C /* Green Bottle.png in Resources */,
@@ -223,7 +224,6 @@
 			files = (
 				0D7D8DDD236641C700341F3A /* HomeViewController.swift in Sources */,
 				0DB9FCEF237320850009B75C /* Buff.swift in Sources */,
-				0D7D8DC123662DA100341F3A /* GameScene.swift in Sources */,
 				0D7D8DC323662DA100341F3A /* GameViewController.swift in Sources */,
 				0D7D8DDB23663A7800341F3A /* Settings.swift in Sources */,
 				0DDF3BAD236C730100B3B429 /* Player.swift in Sources */,

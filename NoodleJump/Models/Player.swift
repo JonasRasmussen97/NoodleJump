@@ -26,7 +26,7 @@ class Player {
     
     init(playerName: String) {
         name = playerName
-        sprite = SKSpriteNode(imageNamed: "Player1")
+        sprite = SKSpriteNode(imageNamed: "NoodleMan.jpg")
         sprite.name = "Player"
         sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
         sprite.physicsBody?.density = 1
@@ -41,7 +41,7 @@ class Player {
         playerScoreLabel.name = "playerScoreLabel"
         playerScoreLabel.fontColor = UIColor.white
         
-        animatePlayer()
+        //animatePlayer()
       
        // print(playerAnimatedAtlas.textureNames.count)
         print(defaults.string(forKey: "saveScoreLocal"))
