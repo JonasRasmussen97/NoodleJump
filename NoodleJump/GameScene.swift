@@ -41,6 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var second: CGFloat = 0.0
     
     var gameIsOver = false
+    var playerHighscoreList = [String]()
         
     
     
@@ -48,7 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         maxWidth = frame.size.width;
         playerObj.sprite.position = CGPoint(x: 0, y: 150)
-        
+        playerHighscoreList = UserDefaults.standard.object(forKey: "playerScorePersist") as? [String] ?? [String]()
         generateLevel()
         GameScene.instance = self
         
@@ -100,19 +101,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // This function generates the level. This is where all the logic for the fields is located.
     // Such as how many fields, the maximum distance between them and so on.
     func generateLevel() {
-        // For loop that creates starting fields. This ensures the player has something to land on when starting. Lower limit = (-maxWidth/2) and upper limit = (maxWidth/2).
-        /*for startFields in level1.startFields {
-            startFields.position = CGPoint(x: 0 + CGFloat.random(in: (-maxWidth/2)...(maxWidth/2)), y: 0 + CGFloat.random(in: 0...30))
-            
-            let b = Buff(spriteName: "Green Bottle")
-            b.sprite.position.x = CGFloat.random(in: 0...1000)
-            b.sprite.position.y = CGFloat.random(in: 500...6000)
-            self.addChild(b.sprite)
-            
-            self.addChild(startFields)
-        }*/
-            
-                // For loop that creates fields.
+        // For loop that creates fields.
         for i in 0...level1.fields.count - 1 {
             if(i > 0) {
                 let previousPosition = level1.fields[i-1].position
@@ -136,9 +125,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     }
                 }
             }else{
-                level1.fields[i].position.x = 0
-                level1.fields[i].position.y = -10
-                self.addChild(level1.fields[i])
+               level1.fields[i].position.x = 200
+               level1.fields[i].position.y = -10
+               self.addChild(level1.fields[i])
             }
             
         }
@@ -160,6 +149,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if((playerObj.sprite.position.y < level1.fields[0].position.y - 50) && !gameIsOver){
                 //self.view?.window?.rootViewController?.present(HomeViewController.init(), animated: true, completion: nil)
                 gameIsOver = true
+                self.playerHighscoreList.append(playerObj.score.description)
+                UserDefaults.standard.set(playerHighscoreList, forKey: "playerScorePersist")
                 self.view?.window?.rootViewController?.dismiss(animated: true, completion: nil)
             }
         }
