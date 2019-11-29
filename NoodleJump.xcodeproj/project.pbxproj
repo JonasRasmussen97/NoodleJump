@@ -21,6 +21,7 @@
 		0DB9FCFA237349DF0009B75C /* 4-Jump.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 0DB9FCF9237349DF0009B75C /* 4-Jump.atlas */; };
 		0DDF3BAD236C730100B3B429 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF3BAC236C730100B3B429 /* Player.swift */; };
 		0DDF3BAF236C731400B3B429 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDF3BAE236C731400B3B429 /* Field.swift */; };
+		16371260239165C50066ACD3 /* FragileTable.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1637125F239165C50066ACD3 /* FragileTable.atlas */; };
 		1680648F2387FDB700F67CB6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1680648E2387FDB700F67CB6 /* TableViewController.swift */; };
 		168064912387FDE600F67CB6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168064902387FDE600F67CB6 /* GameScene.swift */; };
 		1680649323880B7C00F67CB6 /* NoodleMan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1680649223880B7B00F67CB6 /* NoodleMan.jpg */; };
@@ -47,6 +48,7 @@
 		0DB9FCF9237349DF0009B75C /* 4-Jump.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "4-Jump.atlas"; sourceTree = "<group>"; };
 		0DDF3BAC236C730100B3B429 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		0DDF3BAE236C731400B3B429 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		1637125F239165C50066ACD3 /* FragileTable.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = FragileTable.atlas; sourceTree = "<group>"; };
 		1680648E2387FDB700F67CB6 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		168064902387FDE600F67CB6 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = NoodleJump/GameScene.swift; sourceTree = SOURCE_ROOT; };
 		1680649223880B7B00F67CB6 /* NoodleMan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoodleMan.jpg; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		0D7D8DD62366345A00341F3A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				1637125F239165C50066ACD3 /* FragileTable.atlas */,
 				0DB9FCF9237349DF0009B75C /* 4-Jump.atlas */,
 			);
 			path = Assets;
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DB9FCFA237349DF0009B75C /* 4-Jump.atlas in Resources */,
+				16371260239165C50066ACD3 /* FragileTable.atlas in Resources */,
 				1680649323880B7C00F67CB6 /* NoodleMan.jpg in Resources */,
 				0D7D8DC623662DA100341F3A /* Main.storyboard in Resources */,
 				0D7D8DC823662DA300341F3A /* Assets.xcassets in Resources */,
