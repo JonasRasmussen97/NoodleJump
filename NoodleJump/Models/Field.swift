@@ -15,6 +15,9 @@ class Field {
     
     // Determines how far up the player should jump upon touching the field.
     var jumpHeight = 10
+    
+    var fragileTableFrames: [SKTexture] = []
+    var fragileAnimatedAtlas = SKTextureAtlas(named: "FragileTable")
   
     init(spriteName: String) {
         sprite = SKSpriteNode(imageNamed: spriteName)
@@ -23,6 +26,13 @@ class Field {
         sprite.physicsBody?.affectedByGravity = false
         sprite.physicsBody?.isDynamic = false
         sprite.physicsBody?.categoryBitMask = ColliderType.Field
+    }
+    
+    func animateTable() {
+        for i in 1...fragileAnimatedAtlas.textureNames.count {
+            let spriteName = "FragileTable\(i).png"
+            fragileTableFrames.append(SKTexture(imageNamed: spriteName))
+        }
     }
 
 }

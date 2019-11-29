@@ -17,25 +17,8 @@ class TableViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         array = UserDefaults.standard.object(forKey: "playerScorePersist") as? [String] ?? [String]()
-        sortArray()
+        array = array.sorted() { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedDescending }
     }
-    
-    func sortArray(){
-        var tempArr = [Int]()
-        for i in 0...array.count-1{
-            tempArr.append((array[i] as NSString).integerValue)
-        }
-        tempArr.sort()
-        for i in 0...tempArr.count-1{
-            array[i] = tempArr[i].description
-        }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
- 
 
        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(array.count < 5){
