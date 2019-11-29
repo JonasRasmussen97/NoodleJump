@@ -18,12 +18,8 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func modalDismissed(segue: UIStoryboardSegue) {
-        
+        self.view?.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
-   
-    
-    
 
-  
 }
 

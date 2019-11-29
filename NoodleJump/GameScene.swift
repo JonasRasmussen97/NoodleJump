@@ -39,6 +39,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var first: CGFloat = 0.0
     var second: CGFloat = 0.0
+    
+    var gameIsOver = false
         
     
     
@@ -152,6 +154,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for i in 0...level1.fields.count-1{
             if(level1.fields[i].position.y < minY){
                 level1.fields[i].removeFromParent()
+            }
+            
+            //checks if the player is lower than the lowest field
+            if((playerObj.sprite.position.y < level1.fields[0].position.y - 50) && !gameIsOver){
+                //self.view?.window?.rootViewController?.present(HomeViewController.init(), animated: true, completion: nil)
+                gameIsOver = true
+                self.view?.window?.rootViewController?.dismiss(animated: true, completion: nil)
             }
         }
     }
