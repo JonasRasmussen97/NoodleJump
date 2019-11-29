@@ -17,7 +17,18 @@ class TableViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         array = UserDefaults.standard.object(forKey: "playerScorePersist") as? [String] ?? [String]()
-        array.sort()
+        sortArray()
+    }
+    
+    func sortArray(){
+        var tempArr = [Int]()
+        for i in 0...array.count-1{
+            tempArr.append((array[i] as NSString).integerValue)
+        }
+        tempArr.sort()
+        for i in 0...tempArr.count-1{
+            array[i] = tempArr[i].description
+        }
     }
     
     override func didReceiveMemoryWarning() {
