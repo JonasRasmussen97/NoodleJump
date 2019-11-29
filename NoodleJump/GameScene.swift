@@ -163,7 +163,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // Remove the buff node if the player collides with it.
             contact.bodyA.node?.removeFromParent()
         } else if(collision == ColliderType.Player | ColliderType.Field) {
-            playerObj.sprite.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 100))
+            playerObj.sprite.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 300))
             playerObj.sprite.run(SKAction.repeat(SKAction.animate(with: playerObj.playerJumpingFrames, timePerFrame: 0.1, resize: false, restore: true), count: 1))
           //  print("Collision!")
         }

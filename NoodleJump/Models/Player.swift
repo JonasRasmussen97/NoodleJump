@@ -29,6 +29,7 @@ class Player {
         sprite = SKSpriteNode(imageNamed: "Player1")
         sprite.name = "Player"
         sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
+        sprite.setScale(0.75)
         sprite.physicsBody?.density = 1
         sprite.physicsBody?.categoryBitMask = ColliderType.Player
         sprite.physicsBody?.collisionBitMask = ColliderType.Field | ColliderType.Buff
@@ -50,10 +51,8 @@ class Player {
     
     func animatePlayer() {
        for i in 1...playerAnimatedAtlas.textureNames.count {
-            var spriteName = "\(i).png"
+            var spriteName = "Player\(i).png"
             playerJumpingFrames.append(SKTexture(imageNamed: spriteName))
-            
-            
         }
     }
     
