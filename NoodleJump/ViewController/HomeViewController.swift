@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+       // UserDefaults.standard.removeObject(forKey: "playerScorePersist")
     }
     
     @IBAction func modalDismissed(segue: UIStoryboardSegue) {

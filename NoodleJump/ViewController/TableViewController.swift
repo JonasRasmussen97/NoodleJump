@@ -21,23 +21,18 @@ class TableViewController : UITableViewController {
     }
 
        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(array.count < 5){
-           return array.count
-        }else{
-            return 5
+        return array.count
         }
         
-       }
-
+       
+    
      override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Highscores"
      }
 
        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
           let cell = tableView.dequeueReusableCell(withIdentifier: "highScoreCell", for: indexPath)
-        //if(GameScene.instance != nil) {
-          //  let playerO = GameScene.instance.playerObj as Player?
-           // let playerScore: CGFloat = playerO?.score ?? 0
+     
         cell.textLabel?.text = "Score: \(array[indexPath.row])"
            return cell
     }

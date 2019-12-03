@@ -44,7 +44,7 @@ class Player {
         
         animatePlayer()
       
-       // print(playerAnimatedAtlas.textureNames.count)
+      
         print(defaults.string(forKey: "saveScoreLocal"))
     }
 
@@ -66,7 +66,6 @@ class Player {
                      return
                  }
                 let currentX = self.sprite.position.x
-                  //  print(self.sprite.position.x)
                 self.destX = currentX + CGFloat(data.acceleration.x * self.floatSpeed)
             }
              }

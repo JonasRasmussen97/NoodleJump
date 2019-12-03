@@ -20,7 +20,7 @@ static let Buff: UInt32 = 8
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
-    static var instance: GameScene!
+
     // Defines the SKAction when the player moves. It is set further down in the code.
     var action: SKAction = SKAction.moveTo(x: 0, duration: 1)
     
@@ -51,7 +51,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         playerObj.sprite.position = CGPoint(x: 0, y: 150)
         playerHighscoreList = UserDefaults.standard.object(forKey: "playerScorePersist") as? [String] ?? [String]()
         generateLevel()
-        GameScene.instance = self
+       
         
     }
     
@@ -125,7 +125,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     }
                 }
             }else{
-               level1.fields[i].position.x = 200
+                // Sets starting fields to ensure player does not fall to his death upon spawn.
+               level1.fields[i].position.x = 0
                level1.fields[i].position.y = -10
                self.addChild(level1.fields[i])
             }
@@ -147,7 +148,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             //checks if the player is lower than the lowest field
             if((playerObj.sprite.position.y < level1.fields[0].position.y - 50) && !gameIsOver){
-                //self.view?.window?.rootViewController?.present(HomeViewController.init(), animated: true, completion: nil)
                 gameIsOver = true
                 self.playerHighscoreList.append(playerObj.score.description)
                 UserDefaults.standard.set(playerHighscoreList, forKey: "playerScorePersist")
